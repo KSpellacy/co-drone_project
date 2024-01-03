@@ -13,7 +13,7 @@ def pair():
 
 drone = pair()
 
-Color_Main.play(drone)
+Color_Main.play()
 drone.takeoff()
 time.sleep(5)
 
