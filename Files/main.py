@@ -1,8 +1,8 @@
 from codrone_edu.drone import *
-from Files import color_Main
+from Files import Color_Main
 
 drone = Drone()
 drone.pair()
 
 while True:
-    color_Main.play(drone)
+    Color_Main.play(drone)
