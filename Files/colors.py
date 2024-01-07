@@ -1,5 +1,6 @@
 from codrone_edu.drone import *
-import time
+
+
 
 drone = Drone()
 drone.pair()
@@ -9,8 +10,7 @@ for color in colors:
     data = []
     samples = 500
 
-    for \
-            i in range(1):
+    for i in range(1):
         print("Sample: ", i + 1)
         next = input("Press enter to calibrate " + color)
         print("0% ", end="")
@@ -24,4 +24,3 @@ for color in colors:
         print(" 100%")
     drone.new_color_data(color, data, dataset)
 print("Done calibrating.")
-
