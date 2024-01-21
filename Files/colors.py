@@ -1,7 +1,6 @@
 from codrone_edu.drone import *
 
 
-
 drone = Drone()
 drone.pair()
 dataset = "color_data"
