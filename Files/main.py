@@ -1,5 +1,5 @@
 from codrone_edu.drone import *
-from Files import Color_Main
+import Color_Main
 import Rick_Roll
 
 drone = Drone()

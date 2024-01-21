@@ -3,7 +3,7 @@ from codrone_edu.drone import *
 color_data = None
 
 
-def init_color(drone):
+def init_color(drone: Drone):
     print("Init")
     drone.load_classifier(dataset="color_data")
     global color_data

@@ -7,7 +7,7 @@ and seconds will affect where you end up.
 
 default_speed = 85
 default_seconds = 1
-
+#adj for different radi
 
 def _loop(drone: Drone, direction: int = 1):
     drone.square(default_speed, default_seconds, direction)
