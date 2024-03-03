@@ -11,37 +11,32 @@ def pair():
     return drone
 
 
-def to_second_arch(drone):
-    drone.send_absolute_position(2.5, 0, 1.6, 1, 0, 0)
-
-
 drone = pair()
-
-
-def hover(drone):
-    drone.hover(5)
-
-
-# Color_Main.play()
-
-# takeoff
+Color_Main.play(drone)
+drone.reset_move()
+time.sleep(2)
 drone.takeoff()
 time.sleep(2)
-# through first keyhole
 
-drone.send_absolutce_position(1.5, 0, 1.6, 1, 0, 0)
-time.sleep(2)
-drone.get_position_data()
-hover(drone)
+drone.send_absolute_position(2.5, 0, 1.5, 1, 0, 0)
+time.sleep(4)
+drone.send_absolute_position(2.5, 1.6, 1.4, 1, 0, 0)
+time.sleep(4)
+drone.send_absolute_position(2.5, 1.6, 0.2, .5, 0, 0)
+time.sleep(4)
 
-drone.circle()
-drone.send_absolute_position(1.5, 0, 2.1, 1, 0, 0)
-hover(drone)
+drone.stop_motors()
 
-
-drone.land()
+Color_Main.play2(drone)
 drone.disconnect()
 
-
-# drone.send_absolute_position(3.04, 1.8, 1, 1, 0, 0)
+#SPELLACY HELP US - colours
+# if Spellacy helps us with colours:
+#     drone.takeoff()
+#     drone.send_absolute_position(0,0.5,0.5,1set_drone_LED(0, 128, 0, 150)  # green,0,0)
+#     drone.land()
+# else :
+#     drone.takeoff()
+#     drone.send_absolute_position(0,-0.5,0.5,1,0,0)
+#     drone.land()
 
