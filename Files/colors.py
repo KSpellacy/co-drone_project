@@ -14,7 +14,7 @@ for color in colors:
         next = input("Press enter to calibrate " + color)
         print("0% ", end="")
         for j in range(samples):
-            color_data = drone.get_color_data()[0:9]
+            color_data = drone.get_color_data()[0:8]
             data.append(color_data)
 
             time.sleep(0.005)

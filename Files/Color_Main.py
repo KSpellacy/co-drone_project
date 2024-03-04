@@ -3,9 +3,9 @@ from codrone_edu.drone import *
 color_data = None
 
 
-def init_color(drone: Drone):
+def init_color(a_drone: Drone):
     print("Init")
-    drone.load_classifier(dataset="color_data")
+    a_drone.load_classifier(dataset="color_data")
     global color_data
 
 
@@ -37,3 +37,41 @@ def get_color(drone):
         drone.set_drone_LED(0, 0, 255, 150)  # blue
     else:
         drone.set_drone_LED(0, 0, 0, 0)  # black
+
+
+def playLandingStuff(drone: Drone):
+
+    if drone == "blue" or "purple" or "black" or "white" or "lightblue":
+
+        drone.set_drone_LED(0,0,255,150)
+        print("Yay!")
+        drone.takeoff()
+        print("This kills me")
+        time.sleep(1)
+        drone.hover(2)
+        time.sleep(1)
+        print("Save Me!")
+        drone.send_absolute_position(0.5, 0, 0.25, 1, 1, 1)
+        time.sleep(1)
+        print("I love Drones")
+        time.sleep(2)
+        print("No!!")
+        drone.land()
+
+    elif drone == "red":
+        drone.takeoff()
+        time.sleep(1)
+        (drone.send_absolute_position(1, 0, 0.25, 1, 1, 1))
+        drone.land()
+
+    elif drone == "green" or "yellow":
+        drone.takeoff()
+        time.sleep(1)
+        drone.send_absolute_position(0, 1, 0.25, 1, 1, 1)
+        drone.land()
+
+
+"""global color_data
+    color_data = drone.get_color_data()
+    color = drone.predict_colors(color_data)
+"""

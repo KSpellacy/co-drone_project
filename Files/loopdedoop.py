@@ -5,16 +5,21 @@ Supposed to loop a keyhole with drone directly in front of hole. Works fine. Cha
 and seconds will affect where you end up.
 """
 
-default_speed = 85
-default_seconds = 1
+default_speed = 70
+default_seconds = 0.7
 #adj for different radi
 
 def _loop(drone: Drone, direction: int = 1):
     drone.square(default_speed, default_seconds, direction)
-    print('after square:', drone.get_position_data())
-    drone.hover(2)
+
+
+    drone.set_roll(40)
+    drone.move(0.2)
+    drone.set_roll(-45)
+    drone.move(0.1)
     drone.reset_move()
-    time.sleep(1)
+
+    print('after square:', drone.get_position_data())
     print('after sleep:', drone.get_position_data())
 
 
