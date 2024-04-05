@@ -1,16 +1,32 @@
 from codrone_edu.drone import *
 import Color_Main
-import Rick_Roll
-
+color_data = None
 drone = Drone()
-drone.pair()
-
-# Rick_Roll.play(drone)
-# #time.sleep(5)
 
 
-Color_Main.init_color(drone)
+def thr_Loop():
+    drone.send_absolute_position(2.2, 0, 1.5, 0.3, 0, 0)
+    time.sleep(5)
+    drone.send_absolute_position(0, 0, 1.5, 0.3, 0, 0)
+    time.sleep(5)
 
-while True:
-    # todo Make a for loop to take an average of five runs of the colorMain so that it doesn't flicker
+
+def colorCrap():
+    Color_Main.init_color(drone)
     Color_Main.get_color(drone)
+
+
+def loopingCrap():
+    for i in range(4):
+        thr_Loop()
+
+
+def main():
+    colorCrap()
+    drone.takeoff()
+    loopingCrap()
+    drone.land()
+
+
+main()
+

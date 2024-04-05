@@ -9,7 +9,6 @@ drone.pair()
 
 def set_color():
     color_data = drone.get_color_data()
-
     color = drone.predict_colors(color_data)
     if color[0] == "red":
         drone.set_drone_LED(255, 0, 0, 150)  # red
@@ -37,9 +36,9 @@ def set_color():
 set_color()
 drone.takeoff()
 time.sleep(2)
-drone.send_absolute_position(2.3, 0, 1.5, 0.5, 0, 0)
+drone.send_absolute_position(2.4, 0, 1.5, 0.3, 0, 0)
 time.sleep(10)
-drone.send_absolute_position(2.3, 1.7, 1.5, 0.5, 0, 0)
+drone.send_absolute_position(2.4, 1.9, 1.5, 0.3, 0, 0)
 time.sleep(10)
 
 drone.land()

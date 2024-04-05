@@ -7,7 +7,7 @@ drone = Drone()
 def MaxPointRun():
     ready()
     doColorStuff()
-    testAlt()
+    do_movy_stuff()
     doLandingStuff()
     time.sleep(5)
     drone.disconnect()
@@ -83,6 +83,17 @@ def ready():
     drone.reset_sensor()
     drone.reset_move()
     return drone
+
+
+def do_movy_stuff():
+    drone.takeoff()
+    time.sleep(2)
+    drone.send_absolute_position(2.3, 0, 1.5, 0.5, 0, 0)
+    time.sleep(10)
+    drone.send_absolute_position(2.3, 1.8, 1.5, 0.5, 0, 0)
+    time.sleep(3)
+    drone.land()
+    time.sleep(3)
 
 
 MaxPointRun()
