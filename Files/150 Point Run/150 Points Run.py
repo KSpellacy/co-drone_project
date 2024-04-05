@@ -7,6 +7,7 @@ drone.pair()
 
 
 class color:
+
     def red(self: Drone):
         self.set_drone_LED(255, 0, 0, 100)
         print("Turning Red")
